@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Portfolio</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
+</head>
+<body>
+	<header role="banner">
+		<%= render 'shared/navbar' %>
+	</header>
+
+	<main role="main">
+		<p class="notice"><%= notice %></p>
+  		<p class="alert"><%= alert %></p>
+  		
+		<%= yield %>
+	</main>
+
+	<footer>
+		<%= render 'shared/footer' %>
+	</footer>
+	
+</body>
+</html>

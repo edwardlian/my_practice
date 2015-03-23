@@ -1,0 +1,58 @@
+<div class="group">
+	<a class="logo" href="<%= portfolio_path %>">
+		<canvas id="logoCanvas" width="60" height="50"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('logoCanvas');
+			var context = canvas.getContext('2d');
+
+			context.beginPath();
+			context.moveTo(10, 10);
+			context.lineTo(20, 20);
+			context.lineTo(30, 10);
+			context.lineTo(40, 20);
+			context.lineTo(50, 10);
+			context.lineTo(50, 40);
+			context.arc(40, 40, 10, Math.PI, 0, false);
+			context.arc(20, 40, 10, Math.PI, 0, false);
+			context.lineTo(10, 40);
+			context.closePath();
+			context.lineWidth = 3;
+			context.strokeStyle = 'gold';
+			context.stroke();
+
+			$(function(){
+				$(canvas).parent().hover(function(){
+					context.strokeStyle = 'GoldenRod';
+					context.stroke();
+				}, function(){
+					context.strokeStyle = 'gold';
+					context.stroke();
+				});
+			});
+		</script>
+		<div class="logo-name">
+			<h1>Edward Lian</h1>
+			<h2>Front & Back End Developer</h2>
+		</div>
+	</a>
+
+	<nav role="navigation" class="menu">
+		<ul id="menu-nav_menu" class="">
+			<li id="" class="">
+				<%= link_to 'About', about_path %>
+			</li>
+			<li id="" class="">
+				<%= link_to 'Protfolio', portfolio_path %>
+			</li>
+			<li id="" class="">
+				<%= link_to 'Code Lab', code_lab_path %>
+			</li>
+			<li id="" class="">
+				<%= link_to 'Articles', articles_path %>
+			</li>
+			<li id="" class="">
+				<%= link_to 'Contact', contact_path %>
+			</li>
+		</ul>				
+	</nav>
+</div>
